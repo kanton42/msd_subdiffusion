@@ -1,0 +1,31 @@
+# Config file to simulate GLE with multi-exponential memory in double-well potential
+# Exponential spacing is determined by c, d according to eq. 5 in Klimek et al EPJE 2025
+
+name = 'c20_d2_U1_n5_sc1'
+
+dt = 1 # in units of tm
+mass = 1 # will be adjusted according to taum in units
+n_steps = 1e8
+aver = 1009
+temp = 300 # in Kelvin # can be scaled out later to switch to units of kT
+dw = true # this parameter activates the double-well potential, otherwise an input potential file-path has to be given as path
+gammas = [1] # give a dummy value #in units/ns
+taus = [1] # comment this line out in order to perform prw simulation #in ns
+left_bound = -1 # bounds to compute MFPT (is deactivated for double-well simulations, so -1, 1 are dummy variables)
+right_bound = 1
+path_save = '../msd' # where output MSD (and if activated MFPT) is supposed to be saved to
+path = ''
+
+Ul = 1 # assymetry of the potential can be incorporated if needed
+Ur = 1 #in kT barrier height from perspective right well
+c = 20
+d = 2
+n = 5 # number of exponentials
+taum = 1e-5 # inertial time
+mfpt = 'mffpt' # can be 'mfpt' or 'mffpt'. Any other string '' leads to mffpt (first-first)
+# mfpt_bins = 100
+
+# ll = 1
+# rr = 1 # distance right minimum to maximum
+tau_scale = 1 # first memory time in units of taum, 1 means taum=tau_1
+# delimiter = '\t'

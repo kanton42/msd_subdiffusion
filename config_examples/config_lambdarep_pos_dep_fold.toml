@@ -1,0 +1,20 @@
+# config file example to simulate Langevin equation with position dependent friction
+
+dt = 1 # time step
+mass = 3.71e9 # mass according to equipartition theorem
+n_steps = 1e8 # simulation steps per simulation
+aver = 1008 # number of simulations to average over
+temp = 350 # temperature in Kelvin
+name = 'lambdarep' # start string used in beginning of saved file names
+path = 'your_path_to_free_energy/file.txt' # stored in format (x, p(x), U(x)/kT)
+# '/net/data04/kanton/protein_gle_sim/FE_lambdarep_kde.txt'
+path_fric = 'your_path_to_friction_profile/file.txt' 
+# '/net/data04/kanton/protein_gle_sim/mfpt_md/pos_dep_fric_lambdarep_0345to076_smooth5_cs.npy'
+gammas = [5.42e11, 1.48e11, 6.03e10]
+od = true
+# const_side = true
+left_bound = 0.345
+right_bound = 0.76
+fold = 0
+
+# delimiter = '\t'

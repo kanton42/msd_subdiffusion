@@ -1,0 +1,16 @@
+# This is a pseudo config file to extract the MFPT and from that the position dependent (Markovian) friction from several input trajectories
+
+dt = 200 # time step
+name = 'lambdarep' # start string used at the beginning of all saved files
+path_pot = '/your_path_to_free_energy/file.txt' # format should be (x, p(x), U(x)/kT) 
+trj_list = ['/path1/file.txt, path2/file.txt'] # paths to trajectories from which MFPTs are supposed to be extracted and averaged
+
+left_bound = 0.345 # bounds in between which MFPT is computed
+right_bound = 0.76
+
+cut_ends = 2 # when computing position dependent friction, the boundary values (in this csae first 2 values in beginning and end) are not trustworthy, thus cut
+n_startpoint = 8 # how many intermediate starting points are used from which MFPT profiles are computed (for averaging of the position dependent friction
+
+# delimiter = '\t' # delimiter to load free energy from file
+# steps = 100 # how many bins to use between left_bound and right_bound
+# path_save= '/net/data04/kanton/protein_gle_sim/mfpt_md/'

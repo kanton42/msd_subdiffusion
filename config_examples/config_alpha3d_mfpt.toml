@@ -1,0 +1,16 @@
+# This config file is an example to do a GLE simulation with n-exponential memory in a free energy landscape saved at path
+
+dt = 1 # time step
+mass = 3.41e9 # mass according to equipartition theorem
+n_steps = 1e8 # simulation steps per simulation
+aver = 1009 # how many simulations to average over
+temp = 370 # temperature in Kelvin
+name = 'alpha3d' # start_string of the name used in the saved MSD, MFPT etc. files
+path = '/your_path_to_free_energy/file.txt' # format of free energy should be (x, p(x), U(x)/kT) 
+# '/net/data04/kanton/protein_gle_sim/fe_kde_alpha3d.txt'
+gammas = [1.96e12, 2.39e11, 5.36e10, 1.4e10] # friction amplitudes
+taus = [4300.0, 63.0, 4.9, 0.63] # memory times (in same order as corresponding friction amplitudes)
+left_bound = 0.38 # bounds between which MFPT is extracted (default bin number is 100, but can be adjusted by setting mfpt_bins = xxx)
+right_bound = 0.775
+# mfpt = "mffpt"
+# delimiter = '\t' # delimiter for loading free energy from path
